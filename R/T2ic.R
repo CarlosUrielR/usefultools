@@ -1,0 +1,50 @@
+#' T2 confidence intervals
+#' 
+#' This function computes T2 confidence intervals.
+#' 
+#' @param data a data frame.
+#' @param a by default `a=NULL` and all simultaneous confidence intervals are obtained. If `a=c(1, -1)` then an interval for mu1-mu2 is obtained.
+#' @param alpha by default its value is 0.05.
+#'  
+#' @examples
+#' # This example corresponds to example 5.2 From Johnson and Wichern (2007)
+#' 
+#' x1 <- c(3.7, 5.7, 3.8, 3.2, 3.1, 4.6, 2.4, 7.2, 6.7, 5.4, 3.9, 
+#'         4.5, 3.5, 4.5, 1.5, 8.5, 4.5, 6.5, 4.1, 5.5)
+#' x2 <- c(48.5, 65.1, 47.2, 53.2, 55.5, 36.1, 24.8, 33.1, 47.4, 54.1,
+#'         36.9, 58.8, 27.8, 40.2, 13.5, 56.4, 71.6, 52.8, 44.1, 40.9)
+#' x3 <- c(9.3, 8, 10.9, 12, 9.7, 7.9, 14, 7.6, 8.5, 11.3, 12.7, 12.3,
+#'         9.8, 8.4, 10.1, 7.1, 8.2, 10.9, 11.2, 9.4)
+#' dt <- data.frame(x1, x2, x3)
+#' T2ic(data=dt)
+#' # To obtain IC for mu2 - mu1
+#' T2ic(data=dt, a=c(-1, 1, 0))
+#' # To obtain IC for mu1 - mu3
+#' T2ic(data=dt, a=c(1, 0, -1))
+#' 
+#' @importFrom stats var df qf
+#' @export
+T2ic <- function(data, a=NULL, alpha=0.05) {
+  if(! is.data.frame(data)) 
+    stop("The data must be a dataframe")
+  n <- nrow(data)
+  p <- ncol(data)
+  xbar <- matrix(colMeans(data), ncol=1)
+  S <- var(data)
+  const <- p * (n-1) / (n * (n-p))
+  quant <- qf(p=alpha, df1=p, df2=n-p, lower.tail=FALSE)
+  if (is.null(a)) {
+    a <- diag(p)
+    linf <- c(t(a) %*% xbar) - sqrt(const * quant * diag(t(a) %*% S %*% a))
+    lsup <- c(t(a) %*% xbar) + sqrt(const * quant * diag(t(a) %*% S %*% a))
+    res <- cbind(linf, lsup)
+    rownames(res) <- colnames(data)
+  }
+  else {
+    a <- matrix(a, ncol=1)
+    linf <- c(t(a) %*% xbar) - sqrt(const * quant * diag(t(a) %*% S %*% a))
+    lsup <- c(t(a) %*% xbar) + sqrt(const * quant * diag(t(a) %*% S %*% a))
+    res <- cbind(linf, lsup)
+  }
+  res
+}
