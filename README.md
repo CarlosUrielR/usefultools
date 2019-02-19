@@ -13,3 +13,10 @@ You can install the released version of usefultools from [CRAN](https://CRAN.R-p
 ``` r
 install.packages("usefultools")
 ```
+
+Install latest development version from GitHub using the code given below:
+
+``` r
+if (!require('devtools')) install.packages('devtools')
+devtools::install_github('fhernanb/usefultools', force=TRUE)
+```
