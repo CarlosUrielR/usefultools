@@ -3,7 +3,7 @@
 usefultools
 ===========
 
-[![Travis build status](https://travis-ci.com/fhernanb/usefultools.svg?branch=master)](https://travis-ci.com/fhernanb/usefultools)
+[![Travis build status](https://travis-ci.org/fhernanb/usefultools.svg?branch=master)](https://travis-ci.org/fhernanb/usefultools)
 
 This package contains useful functions for statistical analysis.
 
