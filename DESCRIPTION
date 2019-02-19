@@ -2,7 +2,11 @@ Package: usefultools
 Type: Package
 Title: Useful tools for data analysis
 Version: 0.1.0
-Author: Freddy Hernandez <fhernanb@unal.edu.co>
+Authors@R: c(
+    person("Freddy", "Hernandez", , "fhernanb@unal.edu.co", role = c("aut", "cre"), 
+      comment = c(ORCID = "0000-0001-7459-3329")
+    )
+    )
 Maintainer: Freddy Hernandez <fhernanb@unal.edu.co>
 Description: This package contains useful tools for data analysis.
 License: GPL-3
