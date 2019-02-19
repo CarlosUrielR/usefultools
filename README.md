@@ -1,9 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-usefultools
-===========
+usefultools <img src="man/figures/logo.png" align="right" />
+============================================================
 
-[![Travis build status](https://travis-ci.org/fhernanb/usefultools.svg?branch=master)](https://travis-ci.org/fhernanb/usefultools)
+[![Travis build status](https://travis-ci.com/fhernanb/usefultools.svg?branch=master)](https://travis-ci.com/fhernanb/usefultools)
 
 This package contains useful functions for statistical analysis.
 
