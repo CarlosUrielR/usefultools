@@ -9,3 +9,5 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+URL: https://github.com/fhernanb/usefultools
+BugReports: https://github.com/fhernanb/usefultools/issues
