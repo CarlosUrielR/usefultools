@@ -1,0 +1,32 @@
+#' Maximum Likelihood Estimation for Sigma
+#'
+#' This function obtains the MLE of Sigma covariance matrix for a multivariate normal population. The result is the biased estimator for Sigma because the denominator is \eqn{n}.
+#'
+#' @param x a data frame.
+#' @param mu the vector with the mean if known.
+#'
+#' @examples
+#' # This example consider the dataset from example 5.2 From Johnson and Wichern (2007)
+#' x1 <- c(3.7, 5.7, 3.8, 3.2, 3.1, 4.6, 2.4, 7.2, 6.7, 5.4, 3.9,
+#'         4.5, 3.5, 4.5, 1.5, 8.5, 4.5, 6.5, 4.1, 5.5)
+#' x2 <- c(48.5, 65.1, 47.2, 53.2, 55.5, 36.1, 24.8, 33.1, 47.4, 54.1,
+#'         36.9, 58.8, 27.8, 40.2, 13.5, 56.4, 71.6, 52.8, 44.1, 40.9)
+#' x3 <- c(9.3, 8, 10.9, 12, 9.7, 7.9, 14, 7.6, 8.5, 11.3, 12.7, 12.3,
+#'         9.8, 8.4, 10.1, 7.1, 8.2, 10.9, 11.2, 9.4)
+#' dt <- data.frame(x1, x2, x3)
+#'
+#' # Estimating Sigma assuming unknow mu mean vector
+#' mle_sigma(x=dt)
+#'
+#' # Estimating Sigma assuming known mu mean vector
+#' mle_sigma(x=dt, mu=c(4, 50, 10))
+#'
+#' @export
+mle_sigma <- function(x, mu=NULL) {
+  if(is.null(mu)) mu <- colMeans(x)
+  mu <- c(mu)  # This to ensure a simple vector
+  n <- nrow(x)
+  aux <- t(t(x) - mu)  # auxiliar element
+  s <- t(aux) %*% aux
+  return(s / n)
+}
