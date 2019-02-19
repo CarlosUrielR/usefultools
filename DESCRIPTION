@@ -1,0 +1,11 @@
+Package: usefultools
+Type: Package
+Title: Useful tools for data analysis
+Version: 0.1.0
+Author: Freddy Hernandez <fhernanb@unal.edu.co>
+Maintainer: Freddy Hernandez <fhernanb@unal.edu.co>
+Description: This package contains useful tools for data analysis.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
