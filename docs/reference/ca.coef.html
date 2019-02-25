@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • usefultools</title>
+<title>Coordinate points for a ca object. — ca.coef • usefultools</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Coordinate points for a ca object. — ca.coef" />
+
+<meta property="og:description" content="This function calculates the coordinate points for an object
+with class ca obtained from a correspondence analysis." />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -50,7 +53,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -97,102 +100,46 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Coordinate points for a ca object.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/fhernanb/usefultools/blob/master/R/ca.coef.R'><code>R/ca.coef.R</code></a></small>
+    <div class="hidden name"><code>ca.coef.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>This function calculates the coordinate points for an object
+with class <code>ca</code> obtained from a correspondence analysis.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="ca.coef.html">ca.coef()</a></code> </p>
-        </td>
-        <td><p>Coordinate points for a ca object.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="conditional_np.html">conditional_np()</a></code> </p>
-        </td>
-        <td><p>Conditional distribution of a multivariate normal distribution Np</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="loglik.html">loglik()</a></code> </p>
-        </td>
-        <td><p>Log-likelihood</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="manual_quantiles.html">manual_quantiles()</a></code> </p>
-        </td>
-        <td><p>Quantiles manually</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mle_sigma.html">mle_sigma()</a></code> </p>
-        </td>
-        <td><p>Maximum Likelihood Estimation for Sigma</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_obs_pc.html">plot_obs_pc()</a></code> </p>
-        </td>
-        <td><p>Plot observations in the coordinate plane PC1-PC2.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_prof.html">plot_prof()</a></code> </p>
-        </td>
-        <td><p>Profile plot</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_var_pc.html">plot_var_pc()</a></code> </p>
-        </td>
-        <td><p>Plot variables in the coordinate plane PC1-PC2.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="shade.norm.html">shade.norm()</a></code> <code><a href="shade.norm.html">shade.t()</a></code> <code><a href="shade.norm.html">shade.F()</a></code> <code><a href="shade.norm.html">shade.chi()</a></code> </p>
-        </td>
-        <td><p>Shading functions for interpretation of pdf probabilities</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="shadow.dist.html">shadow.dist()</a></code> </p>
-        </td>
-        <td><p>Shadows for continuous distributions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="T2ic.html">T2ic()</a></code> </p>
-        </td>
-        <td><p>T2 confidence intervals</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>ca.coef</span>(<span class='no'>x</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A ca object.</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>The function returns a list with two elements, coordinate points for first
+and second dimensions.</p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 
